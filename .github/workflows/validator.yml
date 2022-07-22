@@ -1,0 +1,17 @@
+name: Manual workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  lint:
+    name: Command Checker
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: datapack lint
+        uses: ChenCMD/datapack-linter@v1
